@@ -17,7 +17,7 @@ CVE-2021-33525
 
 The Eyes Of Network Lilac exporter configuration page contain a Remote Commande Execution vulnerability. 
 
-The PoC's working fine, (sometime you must have to lunch the script twice ... It's juste a PoC in BASH right !
+The PoC's working fine, (sometime you must have to lunch the script twice ... It's juste a PoC in BASH right !)
 
 Can be abused manually :
 
